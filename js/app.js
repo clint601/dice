@@ -209,3 +209,25 @@ const gameStartBtn = document.getElementById('gameStartBtn')
 const action = new Game()
 
 gameStartBtn.addEventListener('click', ()=> action.init())
+
+/**
+ * 
+ * promise => object represents the eventual completion (or failure) of an asynchronous operation and its resulting value
+ * 
+ * promise has three states:
+ * pending (initial state)
+ * fulfilled (success)
+ * rejected (failed)
+ */
+
+const prom = new Promise((resolve, reject) => {
+    setTimeout(()=> {
+        resolve('loaded')
+    }, 3000)
+})
+
+prom.then((val)=> {
+    console.log(val)
+})
+
+console.log(prom)
